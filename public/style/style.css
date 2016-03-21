@@ -1,7 +1,67 @@
 /* style.css
  * This file provides css styles.
  */
+.nxtBtn,.prevBtn{
+	
+	
+    background-color:Transparent;
+   /* border: black;*/
+    color: white;
+    /*padding: 15px 32px;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font :25px;
+    width: 80px;
+   
+    
+    
 
+}
+
+.submit{
+	/*position: center;*/
+	top: 470px;
+}
+.nxtBtn {
+	position: absolute;
+	/*float: right;*/
+	/*top: 430px;
+	left: 1500px;*/
+	 top: 80%;
+left: 94%;
+}
+.prevBtn {
+	position: absolute;
+	/*float: right;*/
+	/*top: 430px;
+	right: 970px;*/
+	top: 80%;
+right: 58%
+}
+button {
+	padding: 0;
+border: none;
+   background-color: #0F0347;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+ 
+    width: 150px;
+}
+.clearable{
+	
+	/*width: 900px;
+	height:300px;*/
+	width: 60%;
+	height:50%;
+	
+}
+body {
+    background-image: url("DST_watermark.png");
+    background-repeat: repeat;
+} 
 body,html {
 	background-color: #3b4b54;
 	width: 100%;
@@ -12,14 +72,22 @@ body,html {
 	color: #ffffff;
 }
 
-/* header footer common */
-header, footer {
-	width: 100%;
-	text-align: center;
-	color: #fff;
+
+p.content {
+    margin-left: 1cm;
+    white-space: nowrap;
 }
 
+textarea {    
+    position: absolute;
+    width: 80%;
+    height: 60%;
+    background-image:url(DSTWATERMARKs.jpg);
 
+  /* top: 125px;*/
+ top: 20%;
+   
+}
 
 @media (max-width: 600px){
 	.title, .tips, section{
@@ -70,7 +138,6 @@ table {
 .content {
 	padding: 5px;
 	width: 60%;
-
 }
 .contentName {
 	padding: 5px;
@@ -84,10 +151,10 @@ table {
 }
 
 .records textarea {
-	height: 1.2em;
+	height: 2em;
 	font-size: 1em;
 	resize: none;
-	width: 100%;
+	width: 200%;
 	border: none;
 	background-color: transparent;
 	color: #fff;
@@ -95,7 +162,52 @@ table {
 		"Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	font-size: .9em;
 }
+.link {
+	background:none;
+	border:none; 
+	font-size:20px;
+	}
+	
 
+/*	#watermark
+{
+ position:fixed;
+ bottom:5px;
+ right:5px;
+ opacity:0.5;
+ z-index:99;
+ color:white;
+}*/
+	
+/*.watermark {
+    opacity: 0.5;
+    color: transparent;
+    position: fixed;
+    top: auto;
+    left: 80%;
+}*/
+
+#myProgress {
+    position: relative;
+    width: 20%;
+    height: 30px;
+    background-color: grey;
+    float: right;
+}
+#myBar {
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    background-color: green;
+}  
+
+img {
+    /*margin: 5px;
+    float: left;*/
+ /*   width:450px;*/
+    width: 90%;
+   /* height:100px;*/
+}
 
 
 /* buttons */
@@ -141,13 +253,56 @@ tr:hover .deleteBtn {
 .leftHalf {
 	float: left;
 	background-color: #26343f;
-	width: 45%;
+	width: 35%;
 	height: 100%;
+	margin : auto
 }
+/*#watermark 
+{
+	opacity: 0.3;
+    color:lightgrey;
+     background-repeat: repeat;
+    font-size:80px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+}
+ #background1 {
+    position:absolute;
+    z-index:0;
+ background-repeat: repeat;
+ background:transparent;
+    display:block;
+    min-height:100%; 
+    min-width:50%;
+    color:yellow;
+}*/
+
+/*.rightHalf	#watermark 
+{
+	opacity: 0.3;
+    color:lightgrey;
+     background-repeat: repeat;
+    font-size:80px;
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+}
+.righthalf #background1 {
+    position:absolute;
+    z-index:0;
+ background-repeat: repeat;
+ background:transparent;
+    display:block;
+    min-height:100%; 
+    min-width:50%;
+    color:yellow;
+}*/
 
 .rightHalf {
+	
+	
+
 	float: right;
-	width: 55%;
+	width: 65%;
 	background-color: #313f4a;
 	height: 100%;
 	overflow: auto;
@@ -185,7 +340,7 @@ tr:hover .deleteBtn {
 }
 
 h1 {
-  font-weight: bold;
+  font-weight: normal;
   font-size: 2em;
   padding-left: 10%;
   padding-right: 10%;

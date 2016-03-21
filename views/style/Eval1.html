@@ -1,0 +1,59 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Q&A</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" href="/style/style.css" />
+	<script type="text/javascript" src="/scripts/util.js"></script>
+	<script type="text/javascript" src="/scripts/index.js"></script>
+	<script type="text/javascript">
+	function checkID(){
+		var email=document.getElementById("email").value; 
+		var pwd=document.getElementById("pwd").value;
+		if(email==="arathya1"&&pwd==="arathya1"){
+			window.location.href='Eval2.html';
+
+			/*createdoc('arathya1@in.ibm.com','a1','b1','c1','d1','20','GH');
+			createdoc('arathya2@in.ibm.com','a2','b2','c2','d2','20','GH');
+			createdoc('arathya3@in.ibm.com','a3','b3','c3','d3','20','GH');*/
+		}
+	}
+	</script>
+</head>
+<body>
+<!--<div style="width:700px; float: left;">-->
+<div class = "leftHalf">
+<br><br><br><br><br><br>
+<img class="rsz_dstlogo" src="/images/rsz_dstlogo.png">
+<br><br>
+		<h2>
+			<center>Welcome to <span class="blue"> DST </span></center>
+		</h2>
+		<br><br><br>
+	
+</div>
+<div class = "rightHalf">
+	<header>
+		<!--<div class='title'>Favorites Organizer
+		<button class='' onclick="toggleAppInfo()" title='Application Information'>
+				<img height="15px" width="15px" src='images/info.png' alt='detail'/>		
+		</button>
+		</div>-->
+		<div style="text-align:left;">
+		<h2>Login </h2><br><br>
+						<p class="content">Enter ID : <input type="textbox" id="email" value=""></input></p>
+							<p class="content">Enter Password : <input type="password" id="pwd" value=""></input></p>
+							</div>
+						<div style="text-align:center;">
+						<br><br>
+						<!--<div><a href="style/QA.html">START</a></div>-->
+						<button value="Login" onclick = "checkID()" ><font color='white'>Login</font></button>
+						<br><br>
+						</div>
+	</header>	
+	</div>
+	
+</body>
+</html>

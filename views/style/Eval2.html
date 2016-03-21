@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Favorites Organizer powered by Cloudant</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" href="/style/style.css" />
+	
+	<script type="text/javascript" src="/scripts/util.js"></script>
+	<script type="text/javascript" src="/scripts/index.js"></script>
+	<script type="text/javascript">
+	loadItemsEval();
+	function showAns(objButton){
+		
+		var value=objButton.value;
+		//alert(value);
+		var text=document.getElementById(value).innerHTML;
+		//alert(text);
+		//var myWindow = window.open("", "MsgWindow", "width=800, height=800");
+//myWindow.document.write(text);
+		/*var innerHT="<p>"+a1+"<p>";*/
+	document.getElementById('answers').innerHTML=text;
+		/*  window.location='style/eval2.html?id=' +id;*/
+	}
+	</script>
+</head>
+<body>
+<div class="leftHalf">
+<div id='heading1'>
+<h2>Click on the links to view answers</h2>
+</div>
+
+<div id="links">
+<section>
+		<table id='details' class='records' border='0' cellspacing='0' cellpadding='0'><tbody></tbody></table>
+	</section>
+</div>
+<!--<div id='heading2'>
+Answers
+</div>-->
+</div>
+<div class = "rightHalf" id="answers">
+</div>
+<!--<div id='det'></div>-->
+</body>
+</html>

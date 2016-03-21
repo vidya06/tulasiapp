@@ -1,0 +1,462 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>Q&A</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" href="/style/style.css" />
+	<script type="text/javascript"  src="/scripts/timer.js"></script>
+	<script type="text/javascript"  src="/scripts/util.js"></script>
+	
+<script type="text/javascript" src="/scripts/index.js"></script>
+<script type="text/javascript" src="/scripts/progressBar.js"></script>
+<script type="text/javascript"  src="/scripts/recorder.js"></script>	
+<script type="text/javascript" src="/scripts/recorderWorker.js"></script>
+<script type="text/javascript" src="/scripts/main.js"></script>
+<!--<div class='title' id="time">25
+</div>
+</div>-->
+</head>
+	<div class="leftHalf">
+<br><br><br><br><br><br>
+<img class="rsz_dstlogo" src="rsz_dstlogo.png" style="margin-left:2%;"/>
+<br><br><br><br>
+<!--<div class='title' id="time" font="bold">25-->
+<!--<div class='title' id="time" style="font-weight: bold" align = "center">25</div>--> 
+<p><font size="80">
+<div class='title' id="time" style="font-weight: bold" ;  align = "center" >25</div> 
+</font>
+</p>
+</div>
+</div>
+ </div>
+ 
+<div class = "rightHalf">
+<body>
+
+<!--<div id="background1">
+       <p id=watermark> DST </p>
+    </div>-->
+   
+<script language="javascript">
+        function autoResizeDiv()
+        {
+            document.getElementById('main').style.height = window.innerHeight +'px';
+        }
+        window.onresize = autoResizeDiv;
+        autoResizeDiv();
+    </script> 
+    
+    
+<script type="text/javascript">
+function progress(text1,text2,text3,text4){
+	
+	if(text1!==null && text1!==""){
+		//alert("in progress");
+		document.getElementById("progress-bar1").style.background="green";
+	}
+	else{
+		document.getElementById("progress-bar1").style.background="white";
+	}
+	if(text2!==null && text2!==""){
+		//alert("in progress2");
+		document.getElementById("progress-bar2").style.background="green";
+	}
+	else{
+		document.getElementById("progress-bar2").style.background="white";
+	}
+	if(text3!==null && text3!==""){
+		//alert("in progress3");
+		document.getElementById("progress-bar3").style.background="green";
+	}
+	else{
+		document.getElementById("progress-bar3").style.background="white";
+	}
+	if(text4!==null && text4!==""){
+		//alert("in progress4");
+		document.getElementById("progress-bar4").style.background="green";
+	}
+	else{
+		document.getElementById("progress-bar4").style.background="white";
+	}
+}
+function next(btnId){
+
+var text1=document.getElementById('text1').value;
+var text2=document.getElementById('text2').value;
+var text3=document.getElementById('text3').value;
+var text4=document.getElementById('text4').value;
+progress(text1,text2,text3,text4);
+
+	switch(btnId) {
+    case '1':
+
+        document.getElementById("Q1").style.display = "none";
+        document.getElementById("Q2").style.display = "block";
+        document.getElementById("Q3").style.display = "none";
+        document.getElementById("Q4").style.display = "none";
+        document.getElementById("Q5").style.display = "none";
+        break;
+    case '2':
+    
+       document.getElementById("Q1").style.display = "none";
+        document.getElementById("Q2").style.display = "none";
+        document.getElementById("Q3").style.display = "block";
+        document.getElementById("Q4").style.display = "none";
+        document.getElementById("Q5").style.display = "none";
+        break;
+    case '3':
+    
+       document.getElementById("Q1").style.display = "none";
+        document.getElementById("Q2").style.display = "none";
+        document.getElementById("Q3").style.display = "none";
+        document.getElementById("Q4").style.display = "block";
+        document.getElementById("Q5").style.display = "none";
+        break;
+    case '4':
+ 
+       document.getElementById("Q1").style.display = "none";
+        document.getElementById("Q2").style.display = "none";
+        document.getElementById("Q3").style.display = "none";
+        document.getElementById("Q4").style.display = "none";
+        document.getElementById("Q5").style.display = "block";
+        break;
+     
+    default:
+        document.getElementById("Q1").style.display = "block";
+        document.getElementById("Q2").style.display = "none";
+        document.getElementById("Q3").style.display = "none";
+        document.getElementById("Q4").style.display = "none";
+        document.getElementById("Q5").style.display = "none";
+        //default code block
+} 
+}
+function prev(btnId){
+	var text1=document.getElementById('text1').value;
+var text2=document.getElementById('text2').value;
+var text3=document.getElementById('text3').value;
+var text4=document.getElementById('text4').value;
+progress(text1,text2,text3,text4);
+	switch(btnId) {
+    case 'P1':
+      // alert("case 1");
+        document.getElementById("Q1").style.display = "block";
+        document.getElementById("Q2").style.display = "none";
+        document.getElementById("Q3").style.display = "none";
+        document.getElementById("Q4").style.display = "none";
+        document.getElementById("Q5").style.display = "none";
+        break;
+    case 'P2':
+    // alert("case 2");
+       document.getElementById("Q1").style.display = "none";
+        document.getElementById("Q2").style.display = "block";
+        document.getElementById("Q3").style.display = "none";
+        document.getElementById("Q4").style.display = "none";
+        document.getElementById("Q5").style.display = "none";
+        break;
+    case 'P3':
+    // alert("case 3");
+       document.getElementById("Q1").style.display = "none";
+        document.getElementById("Q2").style.display = "none";
+        document.getElementById("Q3").style.display = "block";
+        document.getElementById("Q4").style.display = "none";
+        document.getElementById("Q5").style.display = "none";
+        break;
+    case 'P4':
+ //alert("case 4");
+       document.getElementById("Q1").style.display = "none";
+        document.getElementById("Q2").style.display = "none";
+        document.getElementById("Q3").style.display = "none";
+        document.getElementById("Q4").style.display = "block";
+        document.getElementById("Q5").style.display = "none";
+        break;
+     
+    default:
+        document.getElementById("Q1").style.display = "block";
+        document.getElementById("Q2").style.display = "none";
+        document.getElementById("Q3").style.display = "none";
+        document.getElementById("Q4").style.display = "none";
+        document.getElementById("Q5").style.display = "none";
+        //default code block
+} 
+}
+
+
+function aa()
+ {
+ 	 
+ 	 var name = GetURLParameter('name'); 
+ var ma=loadItems(name,function(match){
+ 	console.log("its in aa "+ match );
+	        /*match.a1=document.getElementById("a1").innerHTML;
+			match.a2=document.getElementById("a2").innerHTML;   
+			match.a3=document.getElementById("a3").innerHTML; 
+			match.a4=document.getElementById("a4").innerHTML;*/ 
+/*aa();*/
+/*getValues2();*/
+   if(!match==="" && !match===null) 
+    {
+        console.log("doc already present");
+        name = match;
+	}
+
+      else {
+      	console.log("its in else");
+      	//getValues2();
+      }
+ });
+ 
+
+} 
+
+/*aa();*/
+ function getValues2(){
+                       /* var name = document.getElementById("text1").value;*/
+                      var name = GetURLParameter('name'); 
+                        console.log(name);
+                      
+                        var n1 = '';
+                        var n2 = '';
+                        var n3 = '';
+                        var n4 = '';
+                        var timeRem = document.getElementById("time").innerHTML; 
+                        var testname = "GH";
+                      //window.location='style/QA.html?name=' +name;
+                    // test(name,n1,n2,n3,n4,timeRem,testname);
+                      
+
+          }  
+      
+     
+/*setInterval(function(){
+	                    var n1 = document.getElementById("text1").value;
+                        var n2 = document.getElementById("text2").value;
+                        var n3 = document.getElementById("text3").value;
+                        var n4 = document.getElementById("text4").value;
+                        var timeRem = document.getElementById("time").innerHTML; 
+                        var testName = "GH";
+var mail=GetURLParameter('name');
+
+                       update(mail,n1,n2,n3,n4,timeRem,testName);
+      
+}, 120000);*/
+               function getValues(){
+                        var n1 = document.getElementById("text1").value;
+                        var n2 = document.getElementById("text2").value;
+                        var n3 = document.getElementById("text3").value;
+                        var n4 = document.getElementById("text4").value;
+                        var timeRem = document.getElementById("time").innerHTML; 
+                        var testName = "GH";
+var mail=GetURLParameter('name');
+                      //update(mail,n1,n2,n3,n4,timeRem,testName);
+                       alert("Your response is submitted. Thank You!");
+                       window.location='Thankyou.html';
+                       /*document.getElementById('Thankyou').style.display = "block";*/
+                       
+                }
+                 function GetURLParameter(sParam){
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+
+ /*function checkname()
+    {
+	
+	   var name=document.getElementByName( "mail" ).value;
+	
+	   if(name === mail )
+	   {
+			   success 
+			   
+                  {
+                     return true;	
+                  }
+                 
+		      }*/
+ 
+ /*function aa()
+ {
+ var match=loadItems();
+	        match.a1=document.getElementById("a1").innerHTML;
+			match.a2=document.getElementById("a2").innerHTML;   
+			match.a3=document.getElementById("a3").innerHTML; 
+			match.a4=document.getElementById("a4").innerHTML;		 
+aa();
+}
+
+/*aa();*/
+ 
+//getValues2();
+/*function move() {
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 20);
+    function frame() {
+        if (width >= 100) {
+            clearInterval(id);
+        } else {
+            width++;
+            elem.style.width = width + '%';
+        }
+    }
+} */
+
+          </script>  
+        <!--  <div id="myProgress">
+    <div id="myBar"></div>
+</div> -->
+<div id="container1" style="top:5%;width:30%;padding-left:80%;padding-top:2%;"><!--<div id="first" style="width:4%; height:27px; border:1px solid black;top: 10%;"></div>-->
+
+  <div id="progress-bar1" style="width:10%; height:27px;background:white;float:left;top:5%;text-align:center;"><font color="black">1</div>
+  <div id="progress-bar2" style="width:10%; height:27px;background:white;float:left;top:5%;text-align:center;">2</div>
+  <div id="progress-bar3" style="width:10%; height:27px;background:white;float:left;top:5%;text-align:center;">3</div>
+  <div id="progress-bar4" style="width:10%; height:27px;background:white;float:left;top:5%;text-align:center;">4</div>
+  <div id="progress-bar5" style="width:10%; height:27px;background:white;float:left;top:5%;text-align:center;">5</div>
+  </div>
+  <!--<div id="container2" style="width:4%; height:27px; border:1px solid black;float:right; top: 10px;">
+  <div id="progress-bar2" style="width:0%; height:27px;background-color:green">
+  </div>-->
+ <br>
+<div id='Q1' style="text-align:left;">
+<p class="content">1.What was your favourite subject in college. Why?
+<!--<div style="text-align:center;">-->
+<br><br><textarea name="text1" id="text1"  class="clearable" type="text" placeholder="Type in your answer" >
+</textarea></p>
+ <button id="1" type="button" class="nxtBtn" style="float: right;" onClick="next(this.id)">>></button> 
+</div>
+<!--<div style="position: absolute;margin:auto;top: 0;right: 300px;bottom: 0;left: 0;width: 100px;height: 50px; ">-->
+
+<div id='Q2' style="text-align:left; display:none;">
+<p class="content">2.You are trying to switch on the television. It does not power on. What could be the possible reasons?
+<!--<div style="position: absolute;margin: auto;top: 0;right: 300px;bottom: 0;left: 0;width: 100px;height: 100px;">-->
+<!--<div style="text-align:center;">-->
+<br><br><textarea name="text2" id="text2"  class="clearable" type="text" placeholder="Type in your answer">
+</textarea></p>
+<button id="P1" type="button" class="prevBtn" style="float: left;" onClick="prev(this.id)"><<</button> 
+<button id="2" type="button" class="nxtBtn" style="float: right;" onClick="next(this.id)">>></button> 
+</div>
+
+<div id='Q3' style="text-align:left;display:none;">
+<p class="content">3.How many squares are there on a chess board.Explain your reasoning?
+<!--<div style="text-align:center;">-->
+<br><br><textarea name="text3" id="text3"  class="clearable" type="text" placeholder="Type in your answer">
+</textarea></p>
+<button id="P2" type="button" class="prevBtn" style="float: left;" onClick="prev(this.id)"><<</button> 
+<button id="3" type="button" class="nxtBtn" style="float: right;" onClick="next(this.id)">>></button> 
+</div>
+
+<div id='Q4' style="text-align:left;display:none;">
+<p class="content">4.Write a summary of what you just heard from below audio?
+<br></br>
+
+ <audio controls>
+  <source src="speech.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<br></br>
+<!--<div style="position: absolute;margin: auto;top: 0;right: 300px;bottom: 0;left: 0;width: 100px;height: 100px;">-->
+<!--<div style="text-align:center;">-->
+<textarea name="text4" id="text4"  class="clearable" type="text" placeholder="Type in your answer">
+</textarea></p>
+<button id="P3" type="button" class="prevBtn" style="float: left;" onClick="prev(this.id)"><<</button> 
+<button id="4" type="button" class="nxtBtn" style="float: right;" style="float: right;" onClick="next(this.id)">>></button> 
+</div>
+
+<div id='Q5'  style="text-align:left;display:none;">
+<p class="content">5.Describe your first day at IBM (Speak)</p>
+
+<br>
+
+
+	<div>
+		<input type="button" id="record" style="margin-left: 1cm; " value="Speak" onclick="toggle();">
+		<input type="button" disabled id="save" value="save" onclick="toggle();" >
+	</div>
+	<br><br>
+	<button id="P4" type="button"class="prevBtn" onClick="prev(this.id)"><<</button> 
+	</div><br><br><br><br><br>
+	<script type="text/javascript">
+
+var a=0;
+function toggle()
+{
+
+if(a==0)
+  a=1;
+else if(a==1)
+  {
+//Checking if select field is enabled
+if (document.getElementById("record").disabled == false)
+{
+//Changing the select field state to disabled and changing the value of button to enable
+
+toggleRecording(this);
+document.getElementById("record").disabled = true;
+var e = document.getElementById("save");
+e.removeAttribute("disabled");
+
+//document.getElementById("btn").value="Enable list"
+
+}
+//Checking if select field is disabled
+else if (document.getElementById("save").disabled == false)
+{
+//Changing the select field state to enabled and changing the value of button to disable
+toggleRecording2(this);
+document.getElementById("save").disabled = true;
+document.getElementById("record").disabled = false;
+//document.getElementById("btn").value="Disable list"
+
+
+}
+}
+}
+
+</script>
+	<script>
+	
+	// create a one-time event
+function onetime(node, type, callback) {
+
+	// create event
+	node.addEventListener(type, function(e) {
+		// remove event
+		e.target.removeEventListener(e.type, arguments.callee);
+		// call handler
+		return callback(e);
+	});
+
+}
+// one-time event
+onetime(document.getElementById("record"), "click", handler);
+
+// handler function
+function handler(e) {
+	//alert("You'll see this again!");
+	initAudio();
+	//alert("You'll only see this once!");
+}
+</script>
+<div style="text-align:center;">
+<div style="display:inline-block">
+<!--<input type="submit" value="Submit" onclick = "getValues();" >-->
+<button class="submit" value="Submit" onclick = "getValues();" ><font color='white'>Submit</font></button>
+
+<!--<div><a href="Thankyou.html">Submit</a></div>-->
+<!--window.location.href='style/QA.html';-->	
+</div> 
+</div>
+<br>
+<div id="idValue" style="display: none;"></div>
+
+</body>
+<html> 

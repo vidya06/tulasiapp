@@ -1,4 +1,10 @@
+
+
+//*****************************************************************************************
+
 //utilities
+
+var audio;
 function createXHR(){
 	if(typeof XMLHttpRequest != 'undefined'){
 		return new XMLHttpRequest();
@@ -30,6 +36,23 @@ function xhrGet(url, callback, errback){
 	xhr.ontimeout = errback;
 	xhr.send();
 }
+function xhrGet2(url, callback, errback){
+	var xhr = new createXHR();
+	xhr.open("GET", url, true);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4){
+			if(xhr.status == 200){
+				callback(xhr.responseText);
+			}else{
+				errback('service not available');
+			}
+		}
+	};
+	
+	xhr.timeout = 100000;
+	xhr.ontimeout = errback;
+	xhr.send();
+}
 function xhrPut(url, data, callback, errback){
 	var xhr = new createXHR();
 	xhr.open("PUT", url, true);
@@ -50,6 +73,61 @@ function xhrPut(url, data, callback, errback){
 
 function xhrAttach(url, data, callback, errback)
 {
+	var id="";
+     	var xhrw = new XMLHttpRequest();
+xhrw.open('GET',data, true);
+xhrw.responseType = 'blob';
+xhrw.onload = function(e) {
+  if (this.status == 200) {
+  //	 var form = new FormData();
+    var myBlob = this.response;
+    // myBlob is now the blob that the object URL pointed to.
+    console.log(myBlob);
+    //form.append('blobdata',myBlob);
+  //  var recoveredBlob = xhr.response;
+
+
+  // var reader = new FileReader;
+     var reader = new FileReader();
+   reader.onload = function() {
+   	
+     var blobAsDataUrl = reader.result;
+     //window.location = blobAsDataUrl;
+
+
+     var form = new FormData();
+	form.append("file", blobAsDataUrl);
+	var id = "";
+	//var json=;
+	  var xhr = new createXHR();
+	xhr.open("POST", url, true);
+	//xhr.setRequestHeader("Content-type", "multipart/form-data");
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4){
+			if(xhr.status == 200){
+				callback(parseJson(xhr.responseText));
+			}else{
+				errback('service not available');
+			}
+		}
+	};
+	xhr.timeout = 1000000;
+//	console.log(json.toString);
+//	console.log(json.toString());
+	xhr.ontimeout = errback;
+	xhr.send(blobAsDataUrl.toString());
+	};
+//reader.readAsArrayBuffer(myBlob);
+    audio=reader.readAsDataURL(myBlob); 
+  
+  }
+};
+xhrw.send();
+	
+}
+
+/*function xhrAttach(url, data, callback, errback)
+{
 	var xhr = new createXHR();
 	xhr.open("POST", url, true);
 	//xhr.setRequestHeader("Content-type", "multipart/form-data");
@@ -65,7 +143,7 @@ function xhrAttach(url, data, callback, errback)
 	xhr.timeout = 1000000;
 	xhr.ontimeout = errback;
 	xhr.send(data);
-}
+}*/
 
 function xhrPost(url, data, callback, errback){
 	var xhr = new createXHR();
@@ -100,6 +178,7 @@ function xhrDelete(url, callback, errback){
 	xhr.timeout = 100000;
 	xhr.ontimeout = errback;
 	xhr.send();
+
 }
 
 function parseJson(str){
@@ -122,3 +201,6 @@ function objectToQuery(map){
 	return pairs.join("&");
 }
 
+function storeId(id){
+	document.getElementById('idValue').innerHTML=id;
+}
